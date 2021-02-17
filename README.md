@@ -8,7 +8,7 @@ b) ANT is installed
 
 env.bat can be modified to suit your PC.  
 
-Build command in the DSProject directory  
+Build command  
 
 **ant**  
 
@@ -18,7 +18,7 @@ Run commnand
 **java -jar IPPhoneHome.jar**  
 
 Docs command  
-  
+
 **ant docs**  
 
 The testing requires to create  2 folders 3PO and R2.  
