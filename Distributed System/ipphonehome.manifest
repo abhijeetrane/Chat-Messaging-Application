@@ -1,0 +1,2 @@
+Main-Class: ipphonehome.ui.IpPhoneHomeUI
+Class-Path: ../tools/rfly.jar ../tools/jroll.jar ../tools/space.jar ../tools/jl020.jar  ../tools/tritonus_gsm ../tools/tritonus_remaining.jar ../tools/tritonus_share.jar ../tools/am-2003-06-20.jar ../res/ring.mp3 ../res/busyring.mp3

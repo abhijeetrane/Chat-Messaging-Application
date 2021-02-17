@@ -1,0 +1,62 @@
+<?xml version="1.0"?>
+
+<!--
+
+Ant script for IPPhoneHome
+by Lanikai
+
+-->
+
+<project name="IPPhoneHome" default="compile" basedir=".">
+     <!-- These are properties used by the script. -->
+
+     <property name="src" value="IPPhoneHome" />
+
+     <property name="build.classes" value="build"/>
+
+     <property name="docs" value="html"/>
+
+     
+
+     <!-- This tasks makes the build and html directories. -->
+     <target name="prepare" description="make needed directories" depends="clean">
+       <mkdir dir="${build.classes}"/>
+     
+
+     </target>
+
+     <!-- This task cleans up the build and html directories. -->
+     <target name="clean" description="clean up build directories">
+       <delete dir="${build.classes}"/>
+     </target>
+
+     <!-- This task creates the base IPPhoneHome classes, it depends
+          on having the build directory being created. -->
+     <target name="IPPhoneHome" description="base classes" depends="prepare">
+          <javac srcdir="${src}" destdir="${build.classes}"/>
+     </target>
+
+     <!-- This task builds the executable jar, -->
+     <target name="compile" description="IPPhoneHome jar" depends="IPPhoneHome">
+          <jar jarfile="${build.classes}/IPPhoneHome.jar"
+               manifest="ipphoneHome.manifest"
+               basedir="${build.classes}"
+               includes="**/*.class" />
+
+     </target>
+
+    <!-- Make javadoc html files. -->
+
+    <target name="docs" description="Generating JavaDoc for IP Phone Home">
+		<delete dir="${docs}"/>
+		<mkdir dir="${docs}"/>
+
+       <javadoc destdir="${docs}" windowtitle="IP Phone Home : Lanikai">
+         <fileset dir="${src}">
+           <include name="**/*.java"/>
+         </fileset>
+
+       </javadoc>
+   </target>
+
+</project>
